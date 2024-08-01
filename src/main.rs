@@ -2,20 +2,16 @@ use std::io::stdin;
 
 // Ez pipa
 fn main() {
-    let mut fahrenheit = String::new();
-    stdin().read_line(&mut fahrenheit).expect("Failed!");
-    let fahrenheit: f64 = fahrenheit.trim().parse().expect("Faield!");
-
-    let mut celsius = String::new();
-    stdin().read_line(&mut celsius).expect("Failed!");
-    let celsius: f64 = celsius.trim().parse().expect("Faield!");
+    let mut number = String::new();
+    stdin().read_line(&mut number).expect("Failed!");
+    let number: f64 = number.trim().parse().expect("Faield!");
 
     let mut operation = String::new();
     stdin().read_line(&mut operation).expect("Failed!");
 
     let result: f64 = match operation.trim() {
-      "f_c" => fahrenheit - 32.0,
-      "c_f" => celsius * 1.8,
+      "f_c" => number - 32.0,
+      "c_f" => number * 1.8,
       _=> panic!(),
     };
 
